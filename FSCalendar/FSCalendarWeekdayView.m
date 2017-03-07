@@ -101,7 +101,7 @@
     [self.weekdayLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull label, NSUInteger idx, BOOL * _Nonnull stop) {
         NSInteger index = idx;
         label.font = self.calendar.appearance.weekdayFont;
-        if (index == 0 || [self.weekdayLabels count] - 1) {
+        if (index == 0 || index == [self.weekdayLabels count] - 1) {// update by quentin
             label.textColor = self.calendar.appearance.weekdayTextBorderColor;
         }
         else {
