@@ -101,7 +101,13 @@
     [self.weekdayLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull label, NSUInteger idx, BOOL * _Nonnull stop) {
         NSInteger index = idx;
         label.font = self.calendar.appearance.weekdayFont;
-        label.textColor = self.calendar.appearance.weekdayTextColor;
+        if (index == 0 || [self.weekdayLabels count] - 1) {
+            label.textColor = self.calendar.appearance.weekdayTextBorderColor;
+        }
+        else {
+            label.textColor = self.calendar.appearance.weekdayTextColor;
+        }
+        
         index += self.calendar.firstWeekday-1;
         index %= 7;
         label.text = useDefaultWeekdayCase ? weekdaySymbols[index] : [weekdaySymbols[index] uppercaseString];

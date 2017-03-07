@@ -100,6 +100,8 @@ typedef NS_OPTIONS(NSUInteger, FSCalendarSeparators) {
  */
 @property (strong, nonatomic) UIColor  *weekdayTextColor;
 
+@property (nonatomic, strong) UIColor  *weekdayTextBorderColor;/**<weekday左右两边的颜色>*/
+
 /**
  * The color of month header text.
  */
