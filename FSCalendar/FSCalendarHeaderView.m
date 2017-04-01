@@ -240,10 +240,7 @@
             break;
         }
         case FSCalendarScopeWeek: {
-            
-            // add by quentin
-            _calendar.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
-            
+
             if ((indexPath.item == 0 || indexPath.item == [self.collectionView numberOfItemsInSection:0] - 1)) {
                 text = nil;
             } else {

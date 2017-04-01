@@ -98,6 +98,9 @@
     NSArray *weekdaySymbols = useVeryShortWeekdaySymbols ? self.calendar.gregorian.veryShortStandaloneWeekdaySymbols : self.calendar.gregorian.shortStandaloneWeekdaySymbols;
     BOOL useDefaultWeekdayCase = (self.calendar.appearance.caseOptions & (15<<4) ) == FSCalendarCaseOptionsWeekdayUsesDefaultCase;
     
+    // add by quentin
+    _calendar.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+    
     [self.weekdayLabels enumerateObjectsUsingBlock:^(UILabel * _Nonnull label, NSUInteger idx, BOOL * _Nonnull stop) {
         NSInteger index = idx;
         label.font = self.calendar.appearance.weekdayFont;
