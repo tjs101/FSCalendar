@@ -216,6 +216,10 @@
     cell.titleLabel.font = appearance.headerTitleFont;
     cell.titleLabel.textColor = appearance.headerTitleColor;
     _calendar.formatter.dateFormat = appearance.headerDateFormat;
+    
+    // add by quentin
+    _calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
+    
     BOOL usesUpperCase = (appearance.caseOptions & 15) == FSCalendarCaseOptionsHeaderUsesUpperCase;
     NSString *text = nil;
     switch (self.calendar.transitionCoordinator.representingScope) {
