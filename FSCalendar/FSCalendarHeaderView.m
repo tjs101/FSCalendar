@@ -217,14 +217,15 @@
     cell.titleLabel.textColor = appearance.headerTitleColor;
     _calendar.formatter.dateFormat = appearance.headerDateFormat;
     
-    // add by quentin
-    _calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
-    
     BOOL usesUpperCase = (appearance.caseOptions & 15) == FSCalendarCaseOptionsHeaderUsesUpperCase;
     NSString *text = nil;
     switch (self.calendar.transitionCoordinator.representingScope) {
         case FSCalendarScopeMonth: {
             if (_scrollDirection == UICollectionViewScrollDirectionHorizontal) {
+                
+                // add by quentin
+                _calendar.locale = [NSLocale localeWithLocaleIdentifier:@"zh-CN"];
+                
                 // 多出的两项需要制空
                 if ((indexPath.item == 0 || indexPath.item == [self.collectionView numberOfItemsInSection:0] - 1)) {
                     text = nil;
@@ -239,6 +240,10 @@
             break;
         }
         case FSCalendarScopeWeek: {
+            
+            // add by quentin
+            _calendar.locale = [NSLocale localeWithLocaleIdentifier:@"en_US"];
+            
             if ((indexPath.item == 0 || indexPath.item == [self.collectionView numberOfItemsInSection:0] - 1)) {
                 text = nil;
             } else {
